@@ -1,4 +1,4 @@
 idonethis-cli
 =============
 
-A quick and dirty iDoneThis CLI that allows you to have multiple projects + your personal calendar.
+iDoneThis CLI that allows you to have *multiple calendars* with a copy to *your personal calendar*.

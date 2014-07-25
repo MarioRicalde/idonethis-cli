@@ -6,6 +6,14 @@
 #    id e working out today
 #
 function id() {
+  local from_name
+  local from_addr
+  local to_addr
+  local tag
+  local personal_addr
+  local body
+  local strip
+
   ## Set your name & email address tied to your iDoneThis account here
   from_name="Your Name"
   from_addr="your@email.com"
@@ -15,10 +23,10 @@ function id() {
   strip=1
 
   ## Setup differnt "projects", by doing `id X message`, where X is the project.
-  if [[ "$1" == "p" ]]; then
+  if [[ "$1" == "project" ]]; then
     to_addr="project@team.idonethis.com"
     tag="#project"
-  elif [[ "$1" == "pp" ]]; then
+  elif [[ "$1" == "project2" ]]; then
     to_addr="project2@team.idonethis.com"
     tag="#project2"
   elif [[ "$1" == "t" ]]; then
@@ -32,6 +40,7 @@ function id() {
   if [[ $strip -eq 1 ]]; then
     body=$(echo $body | sed 's/^.\{2\}//')
   fi
+
 
   ## Email Specific List
   if [ -n "${to_addr}" ]; then
